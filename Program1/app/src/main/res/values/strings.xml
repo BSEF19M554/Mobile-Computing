@@ -1,0 +1,4 @@
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <string name="app_name" tools:ignore="Typos">Program1</string>
+    <string name="bismillah">Bismillah</string>
+</resources>

@@ -1,0 +1,29 @@
+<resources>
+    <string name="app_name">3-layouts</string>
+    <string name="calculator">Calculator</string>
+    <string name="divideSymbol">/</string>
+    <string name="subtractSymbol">-</string>
+    <string name="addSymbol">+</string>
+    <string name="multiplySymbol">*</string>
+    <string name="decimalSymbol">.</string>
+    <string name="_0">0</string>
+    <string name="_2">2</string>
+    <string name="_1">1</string>
+    <string name="_4">4</string>
+    <string name="_7">7</string>
+    <string name="_3">3</string>
+    <string name="_5">5</string>
+    <string name="_9">9</string>
+    <string name="_8">8</string>
+    <string name="_6">6</string>
+    <string name="equalSymbol">=</string>
+    <string name="_0_0">0.0</string>
+    <string name="login_page">Login Page</string>
+    <string name="username">Username</string>
+    <string name="login">Login</string>
+    <string name="loginimage">LoginImage</string>
+    <string name="password">Password</string>
+    <string name="bismillah">Bismillah</string>
+    <string name="click_to_change_text">Click to change text</string>
+    <string name="onClickEvent">You clicked the button</string>
+</resources>
