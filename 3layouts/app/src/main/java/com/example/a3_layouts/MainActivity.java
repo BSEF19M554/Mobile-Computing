@@ -13,7 +13,7 @@ public class MainActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.calculator);
         textToChange = findViewById(R.id.textView6);
         changeTextButton = findViewById(R.id.button14);
         changeTextButton.setOnClickListener(view -> textToChange.setText(R.string.onClickEvent));
