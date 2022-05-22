@@ -58,4 +58,8 @@
     <string name="alphabetZ">Zebra</string>
     <string name="alphabetV">Vulture</string>
     <string name="alphabetW">Whale</string>
+    <string name="description">Description</string>
+    <string name="button">Button</string>
+    <string name="choose_the_correct_option">Choose the correct option!</string>
+    <string name="exam_image">Exam image</string>
 </resources>

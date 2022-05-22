@@ -8,8 +8,8 @@
 
     <ImageView
         android:id="@+id/myImage"
-        android:layout_width="335dp"
-        android:layout_height="338dp"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
         android:layout_marginTop="40dp"
         android:contentDescription="@string/image_to_show_for_alphabet"
         app:layout_constraintEnd_toEndOf="parent"
@@ -24,7 +24,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/textview"
+        android:text="@string/description"
         android:textSize="34sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
