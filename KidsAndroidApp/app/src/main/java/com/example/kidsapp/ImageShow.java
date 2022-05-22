@@ -68,6 +68,91 @@ public class ImageShow extends AppCompatActivity {
                 myText.setText(R.string.alphabetI);
                 myImg.setImageResource(R.drawable.i);
                 break;
+
+            case "J":
+                myText.setText(R.string.alphabetJ);
+                myImg.setImageResource(R.drawable.j);
+                break;
+
+            case "K":
+                myText.setText(R.string.alphabetK);
+                myImg.setImageResource(R.drawable.k);
+                break;
+
+            case "L":
+                myText.setText(R.string.alphabetL);
+                myImg.setImageResource(R.drawable.l);
+                break;
+
+            case "M":
+                myText.setText(R.string.alphabetM);
+                myImg.setImageResource(R.drawable.m);
+                break;
+
+            case "N":
+                myText.setText(R.string.alphabetN);
+                myImg.setImageResource(R.drawable.n);
+                break;
+
+            case "O":
+                myText.setText(R.string.alphabetO);
+                myImg.setImageResource(R.drawable.o);
+                break;
+
+            case "P":
+                myText.setText(R.string.alphabetP);
+                myImg.setImageResource(R.drawable.p);
+                break;
+
+            case "Q":
+                myText.setText(R.string.alphabetQ);
+                myImg.setImageResource(R.drawable.q);
+                break;
+
+            case "R":
+                myText.setText(R.string.alphabetR);
+                myImg.setImageResource(R.drawable.r);
+                break;
+
+            case "S":
+                myText.setText(R.string.alphabetS);
+                myImg.setImageResource(R.drawable.s);
+                break;
+
+            case "T":
+                myText.setText(R.string.alphabetT);
+                myImg.setImageResource(R.drawable.t);
+                break;
+
+            case "U":
+                myText.setText(R.string.alphabetU);
+                myImg.setImageResource(R.drawable.u);
+                break;
+
+            case "V":
+                myText.setText(R.string.alphabetV);
+                myImg.setImageResource(R.drawable.v);
+                break;
+
+            case "W":
+                myText.setText(R.string.alphabetW);
+                myImg.setImageResource(R.drawable.w);
+                break;
+
+            case "X":
+                myText.setText(R.string.alphabetX);
+                myImg.setImageResource(R.drawable.x);
+                break;
+
+            case "Y":
+                myText.setText(R.string.alphabetY);
+                myImg.setImageResource(R.drawable.y);
+                break;
+
+            case "Z":
+                myText.setText(R.string.alphabetZ);
+                myImg.setImageResource(R.drawable.z);
+                break;
         }
     }
 }

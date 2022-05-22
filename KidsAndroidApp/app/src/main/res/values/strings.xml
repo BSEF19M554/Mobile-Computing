@@ -41,4 +41,21 @@
     <string name="u">U</string>
     <string name="m">M</string>
     <string name="w">W</string>
+    <string name="alphabetJ">Jellyfish</string>
+    <string name="alphabetK">Kangaroo</string>
+    <string name="alphabetL">Lion</string>
+    <string name="alphabetM">Monkey</string>
+    <string name="alphabetN">Nest</string>
+    <string name="alphabetO">Ostrich</string>
+    <string name="alphabetP">Pen</string>
+    <string name="alphabetQ">Quail</string>
+    <string name="alphabetR">Rabbit</string>
+    <string name="alphabetS">Sheep</string>
+    <string name="alphabetT">Turtle</string>
+    <string name="alphabetU">Umbrella</string>
+    <string name="alphabetX">Xylophone</string>
+    <string name="alphabetY">Yak</string>
+    <string name="alphabetZ">Zebra</string>
+    <string name="alphabetV">Vulture</string>
+    <string name="alphabetW">Whale</string>
 </resources>
