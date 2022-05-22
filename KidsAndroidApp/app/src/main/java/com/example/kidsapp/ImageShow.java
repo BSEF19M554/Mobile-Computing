@@ -22,12 +22,52 @@ public class ImageShow extends AppCompatActivity {
         Intent intent = getIntent();
 
         String val = intent.getStringExtra("alphabet");
-        myText.setText(val);
 
         switch(val){
             case "A":
-                myText.setText("Apple");
+                myText.setText(R.string.alphabetA);
                 myImg.setImageResource(R.drawable.a);
+                break;
+
+            case "B":
+                myText.setText(R.string.alphabetB);
+                myImg.setImageResource(R.drawable.b);
+                break;
+
+            case "C":
+                myText.setText(R.string.alphabetC);
+                myImg.setImageResource(R.drawable.c);
+                break;
+
+            case "D":
+                myText.setText(R.string.alphabetD);
+                myImg.setImageResource(R.drawable.d);
+                break;
+
+            case "E":
+                myText.setText(R.string.alphabetE);
+                myImg.setImageResource(R.drawable.e);
+                break;
+
+            case "F":
+                myText.setText(R.string.alphabetF);
+                myImg.setImageResource(R.drawable.f);
+                break;
+
+            case "G":
+                myText.setText(R.string.alphabetG);
+                myImg.setImageResource(R.drawable.g);
+                break;
+
+            case "H":
+                myText.setText(R.string.alphabetH);
+                myImg.setImageResource(R.drawable.h);
+                break;
+
+            case "I":
+                myText.setText(R.string.alphabetI);
+                myImg.setImageResource(R.drawable.i);
+                break;
         }
     }
 }
