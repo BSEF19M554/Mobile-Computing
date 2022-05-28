@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.Toast;
 
 import java.util.Random;
 
@@ -13,6 +14,7 @@ public class ExamShow extends AppCompatActivity {
 
     ImageView examImg;
     Button op1, op2, op3, examButton;
+    String option;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +29,7 @@ public class ExamShow extends AppCompatActivity {
         op2 = findViewById(R.id.option2);
         op3 = findViewById(R.id.option3);
 
+        option = alphabets[rand_num];
         switch(alphabets[rand_num]){
             case "A":
                 examImg.setImageResource(R.drawable.a);
@@ -214,7 +217,13 @@ public class ExamShow extends AppCompatActivity {
 
     public void examCheck(View view) {
         examButton = (Button) view;
-        String name =
-        if( == alphabets[rand_num])
+        String name = examButton.getText().toString();
+
+        if(name.equals(option)){
+            Toast.makeText(this, "Correct", Toast.LENGTH_SHORT).show();
+        }
+        else{
+            Toast.makeText(this, "Wrong", Toast.LENGTH_SHORT).show();
+        }
     }
 }
