@@ -10,7 +10,7 @@ import androidx.appcompat.app.AppCompatActivity;
 public class MainActivity extends AppCompatActivity {
 
     ListView myList;
-    String[] myString = {"Lahore", "Islamabad", "Faisalabad"};
+    String[] myString = {"Lahore", "Islamabad", "Faisalabad", "Sialkot", "Sargodha", "Karachi", "Hyderabad", "Sukkur", "Rawalpindi", "Pindi Bhattian", "Chaghi", "Rawalakot"};
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -20,6 +20,6 @@ public class MainActivity extends AppCompatActivity {
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_dropdown_item_1line, myString);
         myList.setAdapter(myAdapter);
 
-        myList.setOnItemClickListener((adapterView, view, i, l) -> Toast.makeText(MainActivity.this, "Clicked" + myString[i], Toast.LENGTH_SHORT).show());
+        myList.setOnItemClickListener((adapterView, view, i, l) -> Toast.makeText(MainActivity.this, "Clicked " + myString[i], Toast.LENGTH_SHORT).show());
     }
 }
