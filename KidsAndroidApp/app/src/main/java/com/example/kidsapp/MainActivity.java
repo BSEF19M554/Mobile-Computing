@@ -9,7 +9,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button lessons, exams, repoLink;
+    Button lessons, customLessons, exams, repoLink;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         lessons = findViewById(R.id.LessonButton);
+        customLessons = findViewById(R.id.CustomLessonButton);
         exams =  findViewById(R.id.ExamButton);
         repoLink = findViewById(R.id.RepoButton);
 
@@ -30,6 +31,11 @@ public class MainActivity extends AppCompatActivity {
 
         lessons.setOnClickListener(view -> {
             Intent intent = new Intent(MainActivity.this, LessonShow.class);
+            startActivity(intent);
+        });
+
+        customLessons.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, CustomLessonShow.class);
             startActivity(intent);
         });
 

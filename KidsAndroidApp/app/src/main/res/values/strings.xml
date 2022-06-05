@@ -62,4 +62,5 @@
     <string name="button">Button</string>
     <string name="choose_the_correct_option">Choose the correct option!</string>
     <string name="exam_image">Exam image</string>
+    <string name="custom_lessons">Custom Lessons</string>
 </resources>
