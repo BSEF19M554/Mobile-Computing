@@ -3,11 +3,14 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
-        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_custom_lesson_show.xml" value="0.25" />
+        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_custom_exam_show.xml" value="0.20416666666666666" />
+        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_custom_lesson_show.xml" value="0.2" />
         <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_exam_show.xml" value="0.2" />
         <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_image_show.xml" value="0.20416666666666666" />
         <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_lesson_show.xml" value="0.2" />
-        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_main.xml" value="0.2" />
+        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/custom_exam_listview.xml" value="0.25" />
+        <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/custom_lesson_listview.xml" value="0.20416666666666666" />
         <entry key="..\:/FAMILY/CHILDREN/AHMED MUBARAK FAISAL/BSSE/Semester 6/Mobile Computing/Cloned Repos/Mobile-Computing/KidsAndroidApp/app/src/main/res/layout/custom_listview.xml" value="0.20416666666666666" />
       </map>
     </option>

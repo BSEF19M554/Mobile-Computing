@@ -36,7 +36,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public View getView(int i, View view, ViewGroup viewGroup) {
-        view = inflater.inflate(R.layout.custom_listview ,null, true);
+        view = inflater.inflate(R.layout.custom_lesson_listview,null, true);
         TextView myTextView1 = view.findViewById(R.id.textView4);
 
         myTextView1.setText(alphabets[i]);
