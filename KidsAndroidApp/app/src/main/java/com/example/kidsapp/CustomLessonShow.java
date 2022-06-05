@@ -2,7 +2,6 @@ package com.example.kidsapp;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -18,8 +17,8 @@ public class CustomLessonShow extends AppCompatActivity {
         setContentView(R.layout.activity_custom_lesson_show);
 
         myList = findViewById(R.id.list);
-        ArrayAdapter<String> myAdapter = new ArrayAdapter<>(CustomLessonShow.this, android.R.layout.simple_dropdown_item_1line, myAlphabets);
-        myList.setAdapter(myAdapter);
+        CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), myAlphabets);
+        myList.setAdapter(cba);
 
         myList.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(CustomLessonShow.this, ImageShow.class);
