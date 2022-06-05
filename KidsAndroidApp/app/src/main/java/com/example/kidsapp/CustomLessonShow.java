@@ -1,9 +1,9 @@
 package com.example.kidsapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
-import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,6 +21,10 @@ public class CustomLessonShow extends AppCompatActivity {
         ArrayAdapter<String> myAdapter = new ArrayAdapter<>(CustomLessonShow.this, android.R.layout.simple_dropdown_item_1line, myAlphabets);
         myList.setAdapter(myAdapter);
 
-        myList.setOnItemClickListener((adapterView, view, i, l) -> Toast.makeText(CustomLessonShow.this, "Clicked " + myAlphabets[i], Toast.LENGTH_SHORT).show());
+        myList.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(CustomLessonShow.this, ImageShow.class);
+            intent.putExtra("alphabet", myAlphabets[i]);
+            startActivity(intent);
+        });
     }
 }
