@@ -12,7 +12,7 @@
         android:layout_height="150dp"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
-        android:contentDescription="TODO"
+        android:contentDescription="@string/exam_image"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         tools:srcCompat="@tools:sample/avatars" />
@@ -21,11 +21,11 @@
         android:id="@+id/op1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="30dp"
-        android:layout_marginTop="30dp"
-        android:text="@string/textview"
+        android:layout_marginTop="80dp"
+        android:text="@string/a"
         android:textAlignment="center"
         android:textSize="24sp"
+        app:layout_constraintEnd_toStartOf="@+id/op2"
         app:layout_constraintStart_toEndOf="@+id/imageIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -33,24 +33,23 @@
         android:id="@+id/op2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="30dp"
-        android:text="@string/textview"
+        android:layout_marginTop="80dp"
+        android:text="@string/a"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.489"
-        app:layout_constraintStart_toEndOf="@+id/op1"
+        app:layout_constraintStart_toEndOf="@+id/imageIcon"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/op3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="90dp"
-        android:text="@string/textview"
+        android:layout_marginTop="80dp"
+        android:text="@string/a"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/imageIcon"
+        app:layout_constraintStart_toEndOf="@+id/op2"
         app:layout_constraintTop_toTopOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>

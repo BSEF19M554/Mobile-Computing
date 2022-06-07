@@ -20,7 +20,5 @@ public class CustomExamShow extends AppCompatActivity {
         myList = findViewById(R.id.examList);
         CustomExamAdapter cxa = new CustomExamAdapter(getApplicationContext(), myAlphabets, myImages);
         myList.setAdapter(cxa);
-
-        myList.setOnItemClickListener((adapterView, view, i, l) -> Toast.makeText(CustomExamShow.this, "", Toast.LENGTH_SHORT).show());
     }
 }
