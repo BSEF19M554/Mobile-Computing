@@ -4,5 +4,7 @@
     <string name="RollNumber">Enter roll number</string>
     <string name="IsEnrolled">IsEnrolled</string>
     <string name="ButtonViewAll">View All Records</string>
+    <string name="ButtonUpdate">Update record</string>
     <string name="Add">Add Record</string>
+    <string name="ButtonDelete">Delete</string>
 </resources>

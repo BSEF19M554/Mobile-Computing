@@ -1,6 +1,5 @@
 package com.example.databaseapplication;
 
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
@@ -15,11 +14,11 @@ import android.widget.Toast;
 import java.util.List;
 
 public class MainActivity extends AppCompatActivity {
-
-    Button buttonAdd, buttonViewAll;
     EditText editName, editRollNumber;
     Switch switchIsActive;
+    Button buttonAdd, buttonViewAll;
     ListView listViewStudent;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,17 +48,15 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        buttonViewAll.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                DBHelper dbHelper = new DBHelper(MainActivity.this);
-                List<StudentModel> list = dbHelper.getAllStudents();
-                ArrayAdapter arrayAdapter = new ArrayAdapter<StudentModel>
-                        (MainActivity.this, android.R.layout.simple_list_item_1,list);
-                listViewStudent.setAdapter(arrayAdapter);
+        buttonViewAll.setOnClickListener(v -> {
+            DBHelper dbHelper = new DBHelper(MainActivity.this);
+            List<StudentModel> list = dbHelper.getAllStudents();
 
-            }
+            CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), list);
+            listViewStudent.setAdapter(cba);
+
+            //ArrayAdapter<StudentModel> arrayAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, list);
+            //listViewStudent.setAdapter(arrayAdapter);
         });
-
     }
 }
