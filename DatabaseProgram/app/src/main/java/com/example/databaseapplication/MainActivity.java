@@ -1,15 +1,15 @@
 package com.example.databaseapplication;
 
-import androidx.appcompat.app.AppCompatActivity;
-
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
 import android.widget.Switch;
 import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.List;
 
@@ -54,9 +54,19 @@ public class MainActivity extends AppCompatActivity {
 
             CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), list);
             listViewStudent.setAdapter(cba);
+            listViewStudent.setOnItemClickListener((adapterView, view, i, l) -> {
+                Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                intent.putExtra("Name", list.get(i).getName());
+                intent.putExtra("Roll", String.valueOf(list.get(i).getRollNmber()));
 
-            //ArrayAdapter<StudentModel> arrayAdapter = new ArrayAdapter<>(MainActivity.this, android.R.layout.simple_list_item_1, list);
-            //listViewStudent.setAdapter(arrayAdapter);
+                boolean bool = list.get(i).isEnroll();
+                if(bool == true)
+                    intent.putExtra("EnrollStat", "Enrolled");
+                else
+                    intent.putExtra("EnrollStat", "Not Enrolled");
+
+                startActivity(intent);
+            });
         });
     }
 }
