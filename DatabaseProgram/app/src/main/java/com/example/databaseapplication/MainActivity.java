@@ -56,6 +56,7 @@ public class MainActivity extends AppCompatActivity {
             listViewStudent.setAdapter(cba);
             listViewStudent.setOnItemClickListener((adapterView, view, i, l) -> {
                 Intent intent = new Intent(MainActivity.this, UpdateActivity.class);
+                intent.putExtra("ID", String.valueOf(list.get(i).getId()));
                 intent.putExtra("Name", list.get(i).getName());
                 intent.putExtra("Roll", String.valueOf(list.get(i).getRollNmber()));
 
