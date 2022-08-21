@@ -14,7 +14,7 @@ public class UpdateActivity extends AppCompatActivity {
 
     EditText et1, et2;
     Switch s1;
-    Button buttonDelete;
+    Button buttonDelete, buttonUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,6 +25,7 @@ public class UpdateActivity extends AppCompatActivity {
         et2 = findViewById(R.id.editTextRollNumberCustom);
         s1 = findViewById(R.id.switchStudentCustom);
         buttonDelete = findViewById(R.id.buttonDelete);
+        buttonUpdate = findViewById(R.id.buttonUpdate);
 
         Intent intent = getIntent();
         int ID = Integer.parseInt(intent.getStringExtra("ID"));
@@ -46,6 +47,17 @@ public class UpdateActivity extends AppCompatActivity {
                 DBHelper dbHelper  = new DBHelper(UpdateActivity.this);
                 dbHelper.deleteRecord(ID);
                 Toast.makeText(UpdateActivity.this, "Record deleted.", Toast.LENGTH_SHORT).show();
+                Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        buttonUpdate.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                DBHelper dbHelper = new DBHelper(UpdateActivity.this);
+                dbHelper.updateRecord(ID, et1.getText().toString(), et2.getText().toString(), s1.isChecked());
+                Toast.makeText(UpdateActivity.this, "Record updated.", Toast.LENGTH_SHORT).show();
                 Intent intent = new Intent(UpdateActivity.this, MainActivity.class);
                 startActivity(intent);
             }

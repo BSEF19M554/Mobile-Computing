@@ -79,4 +79,16 @@ public class DBHelper extends SQLiteOpenHelper {
         db.delete(STUDENT_TABLE, STUDENT_ID + " = ?", new String[] {String.valueOf(ID)});
         db.close();
     }
+
+    public void updateRecord(int ID, String name, String roll, boolean enrollStat){
+        SQLiteDatabase db = this.getWritableDatabase();
+
+        ContentValues values = new ContentValues();
+        values.put(STUDENT_NAME, name);
+        values.put(STUDENT_ROLL, roll);
+        values.put(STUDENT_ENROLL, enrollStat);
+
+        db.update(STUDENT_TABLE, values, STUDENT_ID + " = ?", new String[] {String.valueOf(ID)});
+        db.close();
+    }
 }
