@@ -42,7 +42,7 @@ public class ByParah extends AppCompatActivity {
                 }catch (Exception e){
                     end = DataObject.QuranArabicText.length+1;
                 }
-                Intent intent = new Intent(ByParah.this, AyahView.class);
+                Intent intent = new Intent(ByParah.this, Translation.class);
                 intent.putExtra("Start", start);
                 intent.putExtra("End",end);
                 startActivity(intent);

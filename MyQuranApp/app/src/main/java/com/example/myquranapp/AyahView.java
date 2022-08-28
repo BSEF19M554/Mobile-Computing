@@ -21,12 +21,16 @@ public class AyahView extends AppCompatActivity {
         Intent intent = getIntent();
         int start = intent.getIntExtra("Start",-1);
         int end = intent.getIntExtra("End",-1);
+        String translation = intent.getStringExtra("Translation");
 
         DataObject dataObject = new DataObject();
+        DBHelper dbHelper = new DBHelper(AyahView.this);
 
-        String [] verses = Arrays.copyOfRange(dataObject.QuranArabicText, start-1, end-1);
-        ArrayAdapter<String> arrayAdapter = new ArrayAdapter<String>(AyahView.this, android.R.layout.simple_list_item_1,verses);
+        ArrayList<String> Translated = dbHelper.translation(translation);
+        String[] verses = Arrays.copyOfRange(dataObject.QuranArabicText, start-1, end-1);
+
         ListView listview = findViewById(R.id.listAyah);
-        listview.setAdapter(arrayAdapter);
+        CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), verses, Translated);
+        listview.setAdapter(cba);
     }
 }

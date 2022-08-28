@@ -14,6 +14,9 @@
         android:theme="@style/Theme.MyQuranApp"
         tools:targetApi="31">
         <activity
+            android:name=".Translation"
+            android:exported="false" />
+        <activity
             android:name=".ByParah"
             android:exported="false" />
         <activity

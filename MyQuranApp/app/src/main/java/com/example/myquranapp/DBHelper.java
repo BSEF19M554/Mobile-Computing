@@ -79,6 +79,37 @@ public class DBHelper extends SQLiteOpenHelper {
         return myList;
     }
 
+    public ArrayList<String> translation(String temp){
+        SQLiteDatabase db = this.getReadableDatabase();
+
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + AYAH_TABLE, null);
+
+        if(temp.equals("urdu1")){
+            cursorCourses = db.rawQuery("SELECT \"Fateh Muhammad Jalandhri\"  FROM " + AYAH_TABLE, null);
+        }
+        else if(temp.equals("urdu2")){
+            cursorCourses = db.rawQuery("SELECT \"Mehmood ul Hassan\"  FROM " + AYAH_TABLE, null);
+        }
+        else if(temp.equals("eng1")){
+            cursorCourses = db.rawQuery("SELECT \"Dr Mohsin Khan\" FROM " + AYAH_TABLE, null);
+        }
+        else if(temp.equals("eng2")){
+            cursorCourses = db.rawQuery("SELECT \"Mufti Taqi Usmani\" FROM " + AYAH_TABLE, null);
+        }
+
+        ArrayList<String> myList = new ArrayList<>();
+
+        // moving our cursor to first position.
+        if (cursorCourses.moveToFirst()) {
+            do {
+                myList.add(cursorCourses.getString(0));
+            } while (cursorCourses.moveToNext());
+
+        }
+        cursorCourses.close();
+        return myList;
+    }
+
 //    public void  addStudent(StudentModel STUDENTModel){
 //        SQLiteDatabase db = this.getWritableDatabase();
 //        //Hash map, as we did in bundles
