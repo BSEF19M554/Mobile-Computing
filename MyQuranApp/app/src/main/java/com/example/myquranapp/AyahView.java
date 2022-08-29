@@ -19,15 +19,20 @@ public class AyahView extends AppCompatActivity {
         setContentView(R.layout.activity_ayah_view);
 
         Intent intent = getIntent();
-        int start = intent.getIntExtra("Start",-1);
-        int end = intent.getIntExtra("End",-1);
+//        int start = intent.getIntExtra("Start",-1);
+//        int end = intent.getIntExtra("End",-1);
+        int index = intent.getIntExtra("Index", 0);
+        String type = intent.getStringExtra("Type");
         String translation = intent.getStringExtra("Translation");
 
-        DataObject dataObject = new DataObject();
+        //Toast.makeText(this, "Type " + type, Toast.LENGTH_SHORT).show();
+
+//        DataObject dataObject = new DataObject();
         DBHelper dbHelper = new DBHelper(AyahView.this);
 
-        ArrayList<String> Translated = dbHelper.translation(translation);
-        String[] verses = Arrays.copyOfRange(dataObject.QuranArabicText, start-1, end-1);
+//        String[] verses = Arrays.copyOfRange(dataObject.QuranArabicText, start-1, end-1);
+        ArrayList<String> verses = dbHelper.populateAyah(type, index);
+        ArrayList<String> Translated = dbHelper.translation(type, translation, index);
 
         ListView listview = findViewById(R.id.listAyah);
         CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), verses, Translated);

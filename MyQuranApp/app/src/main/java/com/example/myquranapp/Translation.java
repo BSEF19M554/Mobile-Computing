@@ -6,6 +6,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
 
 public class Translation extends AppCompatActivity {
 
@@ -22,12 +23,18 @@ public class Translation extends AppCompatActivity {
         b4 = findViewById(R.id.mufti_english);
 
         Intent intent = getIntent();
-        int start = intent.getIntExtra("Start",-1);
-        int end = intent.getIntExtra("End",-1);
+        int index = intent.getIntExtra("Index", 0);
+        String type = intent.getStringExtra("Type");
+//        int start = intent.getIntExtra("Start",-1);
+//        int end = intent.getIntExtra("End",-1);
 
         Intent newIntent = new Intent(Translation.this, AyahView.class);
-        newIntent.putExtra("Start", start);
-        newIntent.putExtra("End", end);
+//        newIntent.putExtra("Start", start);
+//        newIntent.putExtra("End", end);
+        newIntent.putExtra("Index", index);
+        newIntent.putExtra("Type", type);
+
+        //Toast.makeText(this, "Type" + type, Toast.LENGTH_SHORT).show();
 
         b1.setOnClickListener(view -> {
             newIntent.putExtra("Translation", "urdu1");

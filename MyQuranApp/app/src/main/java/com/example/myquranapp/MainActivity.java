@@ -23,13 +23,13 @@ public class MainActivity extends AppCompatActivity {
 
     @Override
     public void onBackPressed(){
-        if(drawerLayout.isDrawerOpen(GravityCompat.START)){
+        if(drawerLayout.isDrawerOpen(GravityCompat.START)) {
             drawerLayout.closeDrawer(GravityCompat.START);
-            Toast.makeText(getApplicationContext(),"Start",Toast.LENGTH_LONG).show();
+            //Toast.makeText(getApplicationContext(),"Start",Toast.LENGTH_LONG).show();
         }
-        else
-        {
-            Toast.makeText(getApplicationContext(),"End",Toast.LENGTH_LONG).show();
+        else {
+            drawerLayout.closeDrawer(GravityCompat.START);
+            //Toast.makeText(getApplicationContext(),"End",Toast.LENGTH_LONG).show();
         }
     }
 
@@ -76,8 +76,8 @@ public class MainActivity extends AppCompatActivity {
                         break;
 
                     case R.id.nav_ByAyah:
-                        Toast.makeText(getApplicationContext(),"Voice is clicked",Toast.LENGTH_LONG).show();
-                        drawerLayout.closeDrawer(GravityCompat.START);
+                        Intent intent4 = new Intent(MainActivity.this, MainActivity.class);
+                        startActivity(intent4);
                         break;
                 }
 

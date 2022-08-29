@@ -35,17 +35,22 @@ public class ByParah extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                int start = dataObject.getParahStart(i);
-                int end;
-                try{
-                    end = dataObject.getParahStart(i+1);
-                }catch (Exception e){
-                    end = DataObject.QuranArabicText.length+1;
-                }
                 Intent intent = new Intent(ByParah.this, Translation.class);
-                intent.putExtra("Start", start);
-                intent.putExtra("End",end);
+                intent.putExtra("Index", i);
+                intent.putExtra("Type", "Parah");
                 startActivity(intent);
+
+//                int start = dataObject.getParahStart(i);
+//                int end;
+//                try{
+//                    end = dataObject.getParahStart(i+1);
+//                }catch (Exception e){
+//                    end = DataObject.QuranArabicText.length+1;
+//                }
+//                Intent intent = new Intent(ByParah.this, Translation.class);
+//                intent.putExtra("Start", start);
+//                intent.putExtra("End",end);
+//                startActivity(intent);
             }
         });
     }

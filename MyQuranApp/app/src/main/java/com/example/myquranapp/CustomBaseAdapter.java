@@ -11,11 +11,11 @@ import java.util.ArrayList;
 
 public class CustomBaseAdapter extends BaseAdapter {
     Context context;
-    String[] verses;
+    ArrayList<String> verses;
     ArrayList<String> translated;
     LayoutInflater inflater;
 
-    public CustomBaseAdapter(Context ctx, String[] verses, ArrayList<String> translated){
+    public CustomBaseAdapter(Context ctx, ArrayList<String> verses, ArrayList<String> translated){
         this.context = ctx;
         this.verses = verses;
         this.translated = translated;
@@ -24,7 +24,7 @@ public class CustomBaseAdapter extends BaseAdapter {
 
     @Override
     public int getCount() {
-        return verses.length;
+        return verses.size();
     }
 
     @Override
@@ -43,7 +43,7 @@ public class CustomBaseAdapter extends BaseAdapter {
         TextView arabic = view.findViewById(R.id.arabicTextView);
         TextView translation = view.findViewById(R.id.translationTextView);
 
-        arabic.setText(verses[i]);
+        arabic.setText(verses.get(i));
         translation.setText(translated.get(i));
 
         return view;

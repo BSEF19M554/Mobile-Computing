@@ -29,19 +29,25 @@ public class BySurah extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                DataObject dataObject = new DataObject();
-                int start = dataObject.getSurahStart(i);
-                int end;
-                try{
-                    end = dataObject.getSurahStart(i+1);
-                }
-                catch (Exception e){
-                    end = DataObject.QuranArabicText.length+1;
-                }
                 Intent intent = new Intent(BySurah.this, Translation.class);
-                intent.putExtra("Start", start);
-                intent.putExtra("End",end);
+                intent.putExtra("Index", i);
+                intent.putExtra("Type", "Surah");
                 startActivity(intent);
+
+//                DataObject dataObject = new DataObject();
+//                int start = dataObject.getSurahStart(i);
+//                int end;
+//                try{
+//                    end = dataObject.getSurahStart(i+1);
+//                }
+//                catch (Exception e){
+//                    end = DataObject.QuranArabicText.length+1;
+//                }
+//                Intent intent = new Intent(BySurah.this, Translation.class);
+//                intent.putExtra("Index", i);
+//                intent.putExtra("Start", start);
+//                intent.putExtra("End",end);
+//                startActivity(intent);
             }
         });
     }

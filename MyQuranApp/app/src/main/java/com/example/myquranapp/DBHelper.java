@@ -62,39 +62,61 @@ public class DBHelper extends SQLiteOpenHelper {
         return myList;
     }
 
-    public ArrayList<String> populateAyah(int i){
+    public ArrayList<String> populateAyah(String type, int i){
         SQLiteDatabase db = this.getReadableDatabase();
 
-        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + AYAH_TABLE, null);// + " WHERE SuraID=?", new String[] {String.valueOf(i)});
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM tsurah", null);
+        if(type.equals("Surah")){
+            cursorCourses = db.rawQuery("SELECT \"Arabic Text\" FROM tayah WHERE SuraID=?", new String[] {String.valueOf(i+1)});
+        }
+        else if(type.equals("Parah")){
+            cursorCourses = db.rawQuery("SELECT \"Arabic Text\" FROM tayah WHERE ParaID=?", new String[] {String.valueOf(i+1)});
+        }
 
         ArrayList<String> myList = new ArrayList<>();
 
         //moving our cursor to first position.
         if (cursorCourses.moveToFirst()) {
             do{
-                myList.add(cursorCourses.getString(3));
+                myList.add(cursorCourses.getString(0));
             } while (cursorCourses.moveToNext());
         }
         cursorCourses.close();
         return myList;
     }
 
-    public ArrayList<String> translation(String temp){
+    public ArrayList<String> translation(String type, String temp, int index){
         SQLiteDatabase db = this.getReadableDatabase();
 
         Cursor cursorCourses = db.rawQuery("SELECT * FROM " + AYAH_TABLE, null);
 
-        if(temp.equals("urdu1")){
-            cursorCourses = db.rawQuery("SELECT \"Fateh Muhammad Jalandhri\"  FROM " + AYAH_TABLE, null);
+        if(type.equals("Surah")){
+            if(temp.equals("urdu1")){
+                cursorCourses = db.rawQuery("SELECT \"Fateh Muhammad Jalandhri\" FROM " + AYAH_TABLE + " WHERE SuraID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("urdu2")){
+                cursorCourses = db.rawQuery("SELECT \"Mehmood ul Hassan\" FROM " + AYAH_TABLE + " WHERE SuraID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("eng1")){
+                cursorCourses = db.rawQuery("SELECT \"Dr Mohsin Khan\" FROM " + AYAH_TABLE + " WHERE SuraID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("eng2")){
+                cursorCourses = db.rawQuery("SELECT \"Mufti Taqi Usmani\" FROM " + AYAH_TABLE + " WHERE SuraID = ?", new String[] {String.valueOf(index+1)});
+            }
         }
-        else if(temp.equals("urdu2")){
-            cursorCourses = db.rawQuery("SELECT \"Mehmood ul Hassan\"  FROM " + AYAH_TABLE, null);
-        }
-        else if(temp.equals("eng1")){
-            cursorCourses = db.rawQuery("SELECT \"Dr Mohsin Khan\" FROM " + AYAH_TABLE, null);
-        }
-        else if(temp.equals("eng2")){
-            cursorCourses = db.rawQuery("SELECT \"Mufti Taqi Usmani\" FROM " + AYAH_TABLE, null);
+        else if(type.equals("Parah")){
+            if(temp.equals("urdu1")){
+                cursorCourses = db.rawQuery("SELECT \"Fateh Muhammad Jalandhri\" FROM " + AYAH_TABLE + " WHERE ParaID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("urdu2")){
+                cursorCourses = db.rawQuery("SELECT \"Mehmood ul Hassan\" FROM " + AYAH_TABLE + " WHERE ParaID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("eng1")){
+                cursorCourses = db.rawQuery("SELECT \"Dr Mohsin Khan\" FROM " + AYAH_TABLE + " WHERE ParaID = ?", new String[] {String.valueOf(index+1)});
+            }
+            else if(temp.equals("eng2")){
+                cursorCourses = db.rawQuery("SELECT \"Mufti Taqi Usmani\" FROM " + AYAH_TABLE + " WHERE ParaID = ?", new String[] {String.valueOf(index+1)});
+            }
         }
 
         ArrayList<String> myList = new ArrayList<>();
