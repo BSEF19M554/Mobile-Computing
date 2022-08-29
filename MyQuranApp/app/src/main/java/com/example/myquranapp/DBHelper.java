@@ -132,6 +132,44 @@ public class DBHelper extends SQLiteOpenHelper {
         return myList;
     }
 
+    public ArrayList<Names> getAyahAndTranslation(int index, String type, String translation){
+        SQLiteDatabase db = this.getReadableDatabase();
+        Cursor cursorCourses = db.rawQuery("SELECT * FROM " + AYAH_TABLE, null);
+
+        if(type.equals("Surah")) {
+            if (translation.equals("urdu1")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Fateh Muhammad Jalandhri\" FROM tayah WHERE SuraID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("urdu2")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Mehmood ul Hassan\" FROM tayah WHERE SuraID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("eng1")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Dr Mohsin Khan\" FROM tayah WHERE SuraID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("eng2")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Mufti Taqi Usmani\" FROM tayah WHERE SuraID=?", new String[]{String.valueOf(index + 1)});
+            }
+        }
+        else if(type.equals("Parah")) {
+            if (translation.equals("urdu1")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Fateh Muhammad Jalandhri\" FROM tayah WHERE ParaID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("urdu2")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Mehmood ul Hassan\" FROM tayah WHERE ParaID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("eng1")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Dr Mohsin Khan\" FROM tayah WHERE ParaID=?", new String[]{String.valueOf(index + 1)});
+            } else if (translation.equals("eng2")) {
+                cursorCourses = db.rawQuery("SELECT \"Arabic Text\",\"Mufti Taqi Usmani\" FROM tayah WHERE ParaID=?", new String[]{String.valueOf(index + 1)});
+            }
+        }
+
+        ArrayList<Names> myList = new ArrayList<>();
+
+        //moving our cursor to first position.
+        if (cursorCourses.moveToFirst()) {
+            do{
+                myList.add(new Names(cursorCourses.getString(0), cursorCourses.getString(1)));
+            } while (cursorCourses.moveToNext());
+        }
+        cursorCourses.close();
+        return myList;
+    }
 //    public void  addStudent(StudentModel STUDENTModel){
 //        SQLiteDatabase db = this.getWritableDatabase();
 //        //Hash map, as we did in bundles

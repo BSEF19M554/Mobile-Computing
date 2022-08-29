@@ -18,24 +18,25 @@ public class AyahView extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_ayah_view);
 
+        ListView listview = findViewById(R.id.listAyah);
+
         Intent intent = getIntent();
-//        int start = intent.getIntExtra("Start",-1);
-//        int end = intent.getIntExtra("End",-1);
         int index = intent.getIntExtra("Index", 0);
         String type = intent.getStringExtra("Type");
         String translation = intent.getStringExtra("Translation");
 
-        //Toast.makeText(this, "Type " + type, Toast.LENGTH_SHORT).show();
+        Toast.makeText(this, "Reached AyahView", Toast.LENGTH_SHORT).show();
 
-//        DataObject dataObject = new DataObject();
         DBHelper dbHelper = new DBHelper(AyahView.this);
+        ArrayList<Names> myList = dbHelper.getAyahAndTranslation(index, type, translation);
 
-//        String[] verses = Arrays.copyOfRange(dataObject.QuranArabicText, start-1, end-1);
-        ArrayList<String> verses = dbHelper.populateAyah(type, index);
-        ArrayList<String> Translated = dbHelper.translation(type, translation, index);
+//        ArrayList<String> verses = dbHelper.populateAyah(type, index);
+//        ArrayList<String> Translated = dbHelper.translation(type, translation, index);
 
-        ListView listview = findViewById(R.id.listAyah);
-        CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), verses, Translated);
-        listview.setAdapter(cba);
+//        CustomBaseAdapter cba = new CustomBaseAdapter(getApplicationContext(), verses, Translated);
+//        listview.setAdapter(cba);
+
+        AyahAdapter arrayAdapter = new AyahAdapter(AyahView.this, android.R.layout.simple_list_item_1, myList);
+        listview.setAdapter(arrayAdapter);
     }
 }
