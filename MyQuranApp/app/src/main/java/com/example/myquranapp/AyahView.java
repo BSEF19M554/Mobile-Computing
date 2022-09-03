@@ -25,8 +25,6 @@ public class AyahView extends AppCompatActivity {
         String type = intent.getStringExtra("Type");
         String translation = intent.getStringExtra("Translation");
 
-        Toast.makeText(this, "Reached AyahView", Toast.LENGTH_SHORT).show();
-
         DBHelper dbHelper = new DBHelper(AyahView.this);
         ArrayList<Names> myList = dbHelper.getAyahAndTranslation(index, type, translation);
 

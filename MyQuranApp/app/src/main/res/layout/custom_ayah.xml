@@ -11,10 +11,10 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:fontFamily="@font/noorehuda"
         android:text="Arabic"
         android:textAlignment="center"
-        android:textSize="20dp"
-        android:fontFamily="@font/noorehuda"
+        android:textSize="22sp"
         app:layout_constraintTop_toTopOf="parent"
         tools:layout_editor_absoluteX="0dp" />
 
@@ -23,12 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
-        android:text="Translation"
-        android:paddingLeft="8dp"
-        android:textDirection="anyRtl"
-        android:textSize="20dp"
         android:fontFamily="@font/jameel_noori_nastaleeq"
+        android:paddingLeft="8dp"
+        android:text="Translation"
+        android:textDirection="anyRtl"
+        android:textSize="20sp"
         app:layout_constraintTop_toBottomOf="@+id/arabicTextView"
         tools:layout_editor_absoluteX="0dp" />
 </androidx.constraintlayout.widget.ConstraintLayout>
