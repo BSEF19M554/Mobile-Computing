@@ -1,16 +1,12 @@
 package com.example.myquranapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
-import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class BySurah extends AppCompatActivity {
 
@@ -26,13 +22,11 @@ public class BySurah extends AppCompatActivity {
         ListView listView = findViewById(R.id.listSurah);
         listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(BySurah.this, Translation.class);
-                intent.putExtra("Index", i);
-                intent.putExtra("Type", "Surah");
-                startActivity(intent);
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(BySurah.this, Translation.class);
+            intent.putExtra("Index", i);
+            intent.putExtra("Type", "Surah");
+            startActivity(intent);
 
 //                DataObject dataObject = new DataObject();
 //                int start = dataObject.getSurahStart(i);
@@ -48,7 +42,6 @@ public class BySurah extends AppCompatActivity {
 //                intent.putExtra("Start", start);
 //                intent.putExtra("End",end);
 //                startActivity(intent);
-            }
         });
     }
 }

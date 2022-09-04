@@ -1,12 +1,10 @@
 package com.example.myquranapp;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.AdapterView;
 import android.widget.ListView;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -32,13 +30,11 @@ public class ByParah extends AppCompatActivity {
         ListView listView = findViewById(R.id.listParah);
         listView.setAdapter(arrayAdapter);
 
-        listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
-            @Override
-            public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-                Intent intent = new Intent(ByParah.this, Translation.class);
-                intent.putExtra("Index", i);
-                intent.putExtra("Type", "Parah");
-                startActivity(intent);
+        listView.setOnItemClickListener((adapterView, view, i, l) -> {
+            Intent intent = new Intent(ByParah.this, Translation.class);
+            intent.putExtra("Index", i);
+            intent.putExtra("Type", "Parah");
+            startActivity(intent);
 
 //                int start = dataObject.getParahStart(i);
 //                int end;
@@ -51,7 +47,6 @@ public class ByParah extends AppCompatActivity {
 //                intent.putExtra("Start", start);
 //                intent.putExtra("End",end);
 //                startActivity(intent);
-            }
         });
     }
 }
