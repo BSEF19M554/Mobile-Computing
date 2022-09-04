@@ -51,9 +51,7 @@ public class DBHelper extends SQLiteOpenHelper {
         if (cursorCourses.moveToFirst()) {
             do {
                 myList.add(new Names(cursorCourses.getString(0), cursorCourses.getString(1)));
-                //myList.add(cursorCourses.getInt(0), cursorCourses.getString(1), cursorCourses.getInt(2), cursorCourses.getInt(3) == 1 ? true : false));
             } while (cursorCourses.moveToNext());
-
         }
         cursorCourses.close();
         return myList;
