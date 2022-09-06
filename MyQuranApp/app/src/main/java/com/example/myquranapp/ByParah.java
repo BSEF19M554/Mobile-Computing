@@ -30,10 +30,14 @@ public class ByParah extends AppCompatActivity {
         ListView listView = findViewById(R.id.listParah);
         listView.setAdapter(arrayAdapter);
 
+        Intent oldIntent = getIntent();
+        String viewType = oldIntent.getStringExtra("viewType");
+
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(ByParah.this, Translation.class);
             intent.putExtra("Index", i);
             intent.putExtra("Type", "Parah");
+            intent.putExtra("viewType", viewType);
             startActivity(intent);
 
 //                int start = dataObject.getParahStart(i);

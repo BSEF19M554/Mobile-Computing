@@ -41,12 +41,16 @@ public class ByParah2 extends AppCompatActivity {
         recyclerView.setAdapter(adapter);
         //adapter.notifyDataSetChanged();
 
+        Intent oldIntent = getIntent();
+        String viewType = oldIntent.getStringExtra("viewType");
+
         recyclerView.addOnItemTouchListener(
                 new RecyclerItemClickListener(getApplicationContext(), recyclerView ,new RecyclerItemClickListener.OnItemClickListener() {
                     @Override public void onItemClick(View view, int position) {
                         Intent intent = new Intent(ByParah2.this, Translation.class);
                         intent.putExtra("Index", position);
                         intent.putExtra("Type", "Parah");
+                        intent.putExtra("viewType", viewType);
                         startActivity(intent);
                     }
 
@@ -54,6 +58,7 @@ public class ByParah2 extends AppCompatActivity {
                         Intent intent = new Intent(ByParah2.this, Translation.class);
                         intent.putExtra("Index", position);
                         intent.putExtra("Type", "Parah");
+                        intent.putExtra("viewType", viewType);
                         startActivity(intent);
                     }
                 })

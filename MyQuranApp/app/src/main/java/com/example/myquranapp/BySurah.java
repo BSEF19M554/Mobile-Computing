@@ -22,10 +22,14 @@ public class BySurah extends AppCompatActivity {
         ListView listView = findViewById(R.id.listSurah);
         listView.setAdapter(arrayAdapter);
 
+        Intent oldIntent = getIntent();
+        String viewType = oldIntent.getStringExtra("viewType");
+
         listView.setOnItemClickListener((adapterView, view, i, l) -> {
             Intent intent = new Intent(BySurah.this, Translation.class);
             intent.putExtra("Index", i);
             intent.putExtra("Type", "Surah");
+            intent.putExtra("viewType", viewType);
             startActivity(intent);
 
 //                DataObject dataObject = new DataObject();

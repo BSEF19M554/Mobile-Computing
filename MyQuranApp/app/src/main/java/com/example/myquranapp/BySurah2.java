@@ -28,6 +28,9 @@ public class BySurah2 extends AppCompatActivity {
 
         recyclerView = findViewById(R.id.surahRecyclerView);
 
+        Intent oldIntent = getIntent();
+        String viewType = oldIntent.getStringExtra("viewType");
+
         //LinearLayoutManager GridLayoutManager
         //layoutManager = new LinearLayoutManager(MainActivity.this);
         layoutManager = new LinearLayoutManager(BySurah2.this, LinearLayoutManager.VERTICAL, false);
@@ -43,6 +46,7 @@ public class BySurah2 extends AppCompatActivity {
                         Intent intent = new Intent(BySurah2.this, Translation.class);
                         intent.putExtra("Index", position);
                         intent.putExtra("Type", "Surah");
+                        intent.putExtra("viewType", viewType);
                         startActivity(intent);
                     }
 
@@ -50,6 +54,7 @@ public class BySurah2 extends AppCompatActivity {
                         Intent intent = new Intent(BySurah2.this, Translation.class);
                         intent.putExtra("Index", position);
                         intent.putExtra("Type", "Surah");
+                        intent.putExtra("viewType", viewType);
                         startActivity(intent);
                     }
                 })

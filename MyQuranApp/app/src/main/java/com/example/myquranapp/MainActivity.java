@@ -58,18 +58,21 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_BySurah:
                     //Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                     Intent intent2 = new Intent(MainActivity.this, BySurah.class);
+                    intent2.putExtra("viewType", "list");
                     startActivity(intent2);
                     //drawerLayout.closeDrawer(GravityCompat.START);
                     break;
 
                 case R.id.nav_ByParah:
                     Intent intent3 = new Intent(MainActivity.this, ByParah.class);
+                    intent3.putExtra("viewType", "list");
                     startActivity(intent3);
                     break;
 
                 case R.id.nav_BySurah2:
                     //Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                     Intent intent5 = new Intent(MainActivity.this, BySurah2.class);
+                    intent5.putExtra("viewType", "recycler");
                     startActivity(intent5);
                     //drawerLayout.closeDrawer(GravityCompat.START);
                     break;
@@ -77,6 +80,7 @@ public class MainActivity extends AppCompatActivity {
                 case R.id.nav_ByParah2:
                     //Toast.makeText(getApplicationContext(),"Retur is Clicked",Toast.LENGTH_LONG).show();
                     Intent intent6 = new Intent(MainActivity.this, ByParah2.class);
+                    intent6.putExtra("viewType", "recycler");
                     startActivity(intent6);
                     //drawerLayout.closeDrawer(GravityCompat.START);
                     break;
@@ -87,7 +91,6 @@ public class MainActivity extends AppCompatActivity {
                     drawerLayout.closeDrawer(GravityCompat.START);
                     break;
             }
-
             return true;
         });
     }
