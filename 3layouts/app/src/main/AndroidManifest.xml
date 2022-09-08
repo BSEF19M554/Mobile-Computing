@@ -10,6 +10,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.3layouts">
         <activity
+            android:name=".MyChangeText"
+            android:exported="false" />
+        <activity
+            android:name=".MyLogin"
+            android:exported="false" />
+        <activity
+            android:name=".MyCalculator"
+            android:exported="false" />
+        <activity
             android:name=".MainActivity"
             android:exported="true">
             <intent-filter>
