@@ -28,6 +28,9 @@ public class MainAdapter extends ArrayAdapter{
         TextView textView2 = convertView.findViewById(R.id.textView2);
         textView2.setText(chapter.getUrdu());
 
+        TextView number = convertView.findViewById(R.id.rowNo);
+        number.setText(String.valueOf(position+1));
+
         return convertView;
     }
 }

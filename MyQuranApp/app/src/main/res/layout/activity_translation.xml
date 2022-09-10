@@ -8,7 +8,7 @@
 
     <Button
         android:id="@+id/fateh_urdu"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="120dp"
         android:text="Fateh Muhammad Jalandhari Urdu"
@@ -19,9 +19,9 @@
 
     <Button
         android:id="@+id/mehmood_urdu"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Mehmood ul Hassan Urdu"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -30,9 +30,9 @@
 
     <Button
         android:id="@+id/dr_english"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="50dp"
         android:text="Dr Mohsin Khan English"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -41,9 +41,9 @@
 
     <Button
         android:id="@+id/mufti_english"
-        android:layout_width="wrap_content"
+        android:layout_width="250dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="20dp"
         android:text="Mufti Taqi Usmani English"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"

@@ -29,6 +29,7 @@ public class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAd
         holder.data = namesList.get(position);
         holder.urduSurah.setText(holder.data.getUrdu());
         holder.engSurah.setText(holder.data.getEng());
+        holder.number.setText(String.valueOf(position+1));
     }
 
     @Override
@@ -39,11 +40,13 @@ public class myRecyclerViewAdapter extends RecyclerView.Adapter<myRecyclerViewAd
     public static class MyVH extends RecyclerView.ViewHolder {
         TextView urduSurah;
         TextView engSurah;
+        TextView number;
         Names data;
         public MyVH(@NonNull View itemView) {
             super(itemView);
             urduSurah = itemView.findViewById(R.id.textView2);
             engSurah = itemView.findViewById(R.id.textView);
+            number = itemView.findViewById(R.id.rowNo);
         }
     }
 }

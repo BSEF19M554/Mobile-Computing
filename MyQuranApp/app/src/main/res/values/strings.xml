@@ -2,4 +2,6 @@
     <string name="app_name">MyQuranApp</string>
     <string name="open">Opening</string>
     <string name="close">Closing</string>
+    <string name="arabic_surah">Arabic Surah</string>
+    <string name="urdu_surah">Urdu Surah</string>
 </resources>
