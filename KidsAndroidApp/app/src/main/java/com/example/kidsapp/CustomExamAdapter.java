@@ -58,9 +58,12 @@ public class CustomExamAdapter extends BaseAdapter {
         ImageView myImageView = view.findViewById(R.id.imageIcon);
 
         Random rand_obj = new Random();
-        int my_op = rand_obj.nextInt(26);
-        int rand_op1 = rand_obj.nextInt(26);
-        int rand_op2 = rand_obj.nextInt(26);
+        int my_op, rand_op1, rand_op2;
+        do{
+            my_op = rand_obj.nextInt(26);
+            rand_op1 = rand_obj.nextInt(26);
+            rand_op2 = rand_obj.nextInt(26);
+        }while (my_op == rand_op1 && my_op == rand_op2 && rand_op1 == rand_op2);
 
         switch(my_op%3){
             case 0:
@@ -85,31 +88,34 @@ public class CustomExamAdapter extends BaseAdapter {
                 break;
         }
 
+        int finalMy_op = my_op;
         myTextView1.setOnClickListener(view1 -> {
             String text = myTextView1.getText().toString();
             int index = indexOf(alphabets, text);
 
-            if(index == my_op)
+            if(index == finalMy_op)
                 Toast.makeText(view1.getContext(), "Correct", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(view1.getContext(), "Wrong", Toast.LENGTH_SHORT).show();
         });
 
+        int finalMy_op1 = my_op;
         myTextView2.setOnClickListener(view12 -> {
             String text = myTextView2.getText().toString();
             int index = indexOf(alphabets, text);
 
-            if(index == my_op)
+            if(index == finalMy_op1)
                 Toast.makeText(view12.getContext(), "Correct", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(view12.getContext(), "Wrong", Toast.LENGTH_SHORT).show();
         });
 
+        int finalMy_op2 = my_op;
         myTextView3.setOnClickListener(view13 -> {
             String text = myTextView3.getText().toString();
             int index = indexOf(alphabets, text);
 
-            if(index == my_op)
+            if(index == finalMy_op2)
                 Toast.makeText(view13.getContext(), "Correct", Toast.LENGTH_SHORT).show();
             else
                 Toast.makeText(view13.getContext(), "Wrong", Toast.LENGTH_SHORT).show();
